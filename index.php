@@ -46,6 +46,7 @@ foreach($row as $item) {
     echo (htmlspecialchars($item["name"]).'</br>'.'дата поста: '.htmlentities($item["date"]).'</br>пользователь: '.htmlentities($item["login"]).'</br></br></br>');
 }
 //echo md5('1123581321');
+//echo md5('1123581321');
 $token = uniqid();
 $_SESSION['token'] = $token;
 ?>
