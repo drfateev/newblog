@@ -55,6 +55,6 @@ $_SESSION['token'] = $token;
     <input type="submit" value="send" name="action">
     <input type="hidden" value="<?= $token ?>" name="token">
 </form>
-<p>Hello hello</p>
+<p>Hello</p>
 </body>
 </html>
