@@ -56,5 +56,6 @@ $_SESSION['token'] = $token;
     <input type="hidden" value="<?= $token ?>" name="token">
 </form>
 <p>Hello body</p>
+<p>How are you?</p>
 </body>
 </html>
