@@ -1,3 +1,29 @@
 body {
     background: lightblue;
+    margin: 0;
+    padding: 0;
+}
+#loginform{
+    width: 200px;
+    background-color: rgba(255,255,255,.5);
+    margin: 0 auto;
+    margin-top: 150px;
+    padding: 25px;
+    padding-bottom: 0px;
+}
+input {
+    width: 100%;
+    height: 30px;
+    border: 0px;
+    background-color: white;
+    margin-bottom: 25px;
+    text-align: center;
+    color: lightblue;
+}
+.submit {
+    background-color: lightblue;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
 }

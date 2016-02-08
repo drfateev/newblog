@@ -1,5 +1,8 @@
 <?php
 session_start();
+if($_SESSION['auth'] !== 1){
+    header('Location: /epicphp/newblog/login.php');
+}
 if(!empty($_POST["token"])){
     if($_SESSION["token"] !== $_POST["token"]){
         header ('Location: http://lenta.ru/');
@@ -29,7 +32,7 @@ if(!empty($_COOKIE["backColor"])){
 <body>
 <h1>Blog</h1>
 <?php
-var_dump($_COOKIE);
+var_dump($_SESSION);
 echo "<br>";
 
 $pdo = new PDO("mysql:host=localhost;dbname=epicdb;charset=utf8","root","");
@@ -45,8 +48,6 @@ $row = $statement->fetchAll(PDO::FETCH_ASSOC);
 foreach($row as $item) {
     echo (htmlspecialchars($item["name"]).'</br>'.'дата поста: '.htmlentities($item["date"]).'</br>пользователь: '.htmlentities($item["login"]).'</br></br></br>');
 }
-//echo md5('1123581321');
-//echo md5('1123581321');
 $token = uniqid();
 $_SESSION['token'] = $token;
 ?>
@@ -56,7 +57,5 @@ $_SESSION['token'] = $token;
     <input type="submit" value="send" name="action">
     <input type="hidden" value="<?= $token ?>" name="token">
 </form>
-<p>Hello body</p>
-<p>How are you?</p>
 </body>
 </html>
